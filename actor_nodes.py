@@ -72,7 +72,6 @@ def build_rel_graph(center_actor):
                 continue  # Already in graph or directly connected to center
             G.add_node(coactor, layer=2)
             G.add_edge(actor, coactor, weight=count, movies=movies)
-
     return G
 
 def draw_graph(G, center_actor):
