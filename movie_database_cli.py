@@ -37,14 +37,12 @@ def test_connection_and_list_tables():
                         print("  -", table[0])
                 else:
                     print("\n⚠️ No tables found in the public schema.")
-
             return True
 
     except psycopg.Error as e:
         print("\n❌ Connection failed.")
         print("Error:", e)
         return False
-
 
 def insert_into_database(movie_title, release_year, star_name):
     try:
@@ -104,7 +102,6 @@ def insert_into_database(movie_title, release_year, star_name):
         if 'conn' in locals():
             conn.rollback()
             conn.close()
-
 
 def add_actors_to_movie(title, actor_list):
     try:
@@ -169,15 +166,12 @@ def add_actors_to_movie(title, actor_list):
 
             conn.commit()
 
-
     except psycopg.Error as e:
         print("❌ Error during actor linking.")
         print("Error:", e)
         if 'conn' in locals():
             conn.rollback()
             conn.close()
-
-
 
 def list_actors_for_movie(title):
     try:
@@ -229,7 +223,6 @@ def list_actors_for_movie(title):
         if 'conn' in locals():
             conn.close()
 
-
 def list_movies_for_actor(actor_name):
     try:
         with psycopg.connect(**DB_CONNECTION) as conn:
@@ -266,7 +259,6 @@ def list_movies_for_actor(actor_name):
         print("Error:", e)
         if 'conn' in locals():
             conn.close()
-
 
 def main_menu():
     while True:

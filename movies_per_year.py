@@ -15,7 +15,6 @@ DB_CONNECTION = {
     "port": os.getenv("PGPORT", "5432"),
 }
 
-
 def plot_movies_per_year_with_total():
     try:
         with psycopg.connect(**DB_CONNECTION) as conn:

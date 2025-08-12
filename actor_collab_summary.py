@@ -44,7 +44,6 @@ def build_collaborator_map(pairs):
     for actor1, actor2, count in pairs:
         collaborators[actor1].append((actor2, count))
         collaborators[actor2].append((actor1, count))  # Symmetric
-
     return collaborators
 
 def display_collaborators(collaborators):

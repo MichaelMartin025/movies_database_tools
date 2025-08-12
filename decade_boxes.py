@@ -17,7 +17,6 @@ DB_CONNECTION = {
     "port": os.getenv("PGPORT", "5432"),
 }
 
-
 def five_year_box_visual_colored():
     try:
         # Fetch movies
@@ -68,7 +67,6 @@ def five_year_box_visual_colored():
                                     transform=ax.transAxes, clip_on=False, zorder=2)
             ax.add_patch(border)
 
-
         # Hide extras
         for j in range(idx + 1, len(axes)):
             axes[j].axis("off")
@@ -83,4 +81,3 @@ def five_year_box_visual_colored():
 
 if __name__ == "__main__":
     five_year_box_visual_colored()
-
